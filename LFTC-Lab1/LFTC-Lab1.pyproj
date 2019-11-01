@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>LFTC-Lab1</Name>
     <RootNamespace>LFTC-Lab1</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BinaryTree.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LFTC_Lab1.py" />
+    <Compile Include="my_language_specification.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProgramInternalForm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scanner.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SymbolTable.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
