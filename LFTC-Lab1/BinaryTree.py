@@ -1,39 +1,37 @@
 class Node:
+    def __init__(self, val):
+        self.l = None
+        self.r = None
+        self.v = val
 
-    def __init__(self, data):
+class Tree:
+    def __init__(self):
+        self.root = None
 
-        self.left = None
-        self.right = None
-        self.data = data
-
-    def add(self, data):
-# Compare the new value with the parent node
-        if self.data:
-            if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)
-                else:
-                    self.left.add(data)
-            elif data > self.data:
-                if self.right is None:
-                    self.right = Node(data)
-                else:
-                    self.right.add(data)
+    def add(self, val):
+        if(self.root == None):
+            self.root = Node(val)
         else:
-            self.data = data
+            self._add(val, self.root)
 
-# Print the tree
-    def PrintTree(self):
-        if self.left:
-            self.left.PrintTree()
-        print( self.data),
-        if self.right:
-            self.right.PrintTree()
+    def _add(self, val, node):
+        if(val < node.v):
+            if(node.l != None):
+                self._add(val, node.l)
+            else:
+                node.l = Node(val)
+        else:
+            if(node.r != None):
+                self._add(val, node.r)
+            else:
+                node.r = Node(val)
 
-# Use the insert method to add nodes
-root = Node('d')
-root.add('c')
-root.add('b')
-root.add('a')
+    def __str__(self):
+        if(self.root != None):
+           return str(self._printTree(self.root))
 
-root.PrintTree()
+    def _printTree(self, node):
+        if(node != None):
+            self._printTree(node.l)
+            print (str(node.v) + ' ')
+            self._printTree(node.r)

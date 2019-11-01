@@ -1,0 +1,2 @@
+no_arata-mi << "a = " << a;
+no_arata-mi << " ";

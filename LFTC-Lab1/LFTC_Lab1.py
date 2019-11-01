@@ -25,6 +25,7 @@ if __name__ == '__main__':
                 if token in separators + operators + reservedWords:
                     pif.add(codification[token], -1)
                 elif isIdentifier(token):
+                    print ('Text - \t' + token)
                     id = symbolTable.add(token)
                     pif.add(codification['identifier'], id)
                 elif isConstant(token):
@@ -34,8 +35,10 @@ if __name__ == '__main__':
                     raise Exception('Unknown token ' + token + ' at line ' + str(lineNo))
 
     print('Program internal form: \n', pif)
+
     print('Symbol table: \n',symbolTable)
 
     print('\n\nCodification table: ')
+
     for e in codification:
         print(e, " -> ", codification[e])

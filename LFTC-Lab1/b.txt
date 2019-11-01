@@ -1,0 +1,5 @@
+cuvant_cu_numere_lungi a1234567=1;
+cuvant_cu_numere_lungi b = 3;
+cuvant_cu_numere_lungi c = 5;
+adevar (!a&&b||a<=b&c)
+	no_arata-mi << "test for \"token\" generator" <<

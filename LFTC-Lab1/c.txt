@@ -1,0 +1,22 @@
+cuvant_cu_numere unu;
+cuvant_cu_numere doi;
+
+unu = 1;
+doi = 2;
+
+no_arata-mi << unu + doi;
+
+adevar (unu < doi) {
+   no_arata-mi << "unu < doi";
+} celalalt_adevar {
+   no_arata-mi << "unu > doi";
+}
+
+pentru (cuvant_cu_numere unu = 0; unu < 10; unu = unu + 1) {
+   no_arata-mi << unu << " ";
+}
+
+sa_marga (doi > 0) {
+  no_arata-mi << "doi = " << doi;
+  doi = doi - 1;
+}
