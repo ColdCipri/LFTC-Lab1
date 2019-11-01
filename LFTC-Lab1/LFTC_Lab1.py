@@ -19,26 +19,28 @@ if __name__ == '__main__':
 
     with open(fileName, 'r') as file:
         lineNo = 0
+        print ("\n")
         for line in file:
             lineNo += 1
             for token in tokenGenerator(line[0:-1], separators):
                 if token in separators + operators + reservedWords:
                     pif.add(codification[token], -1)
                 elif isIdentifier(token):
-                    print ('Text - \t' + token)
+                    print ('Identif - \t' + token)
                     id = symbolTable.add(token)
                     pif.add(codification['identifier'], id)
                 elif isConstant(token):
+                    print ('Const - \t' + token)
                     id = symbolTable.add(token)
                     pif.add(codification['constant'], id)
                 else:
                     raise Exception('Unknown token ' + token + ' at line ' + str(lineNo))
 
-    print('Program internal form: \n', pif)
+    print('\nProgram internal form: \n', pif)
 
-    print('Symbol table: \n',symbolTable)
+    print('\nSymbol table: \n', symbolTable)
 
-    print('\n\nCodification table: ')
+    print('\n\nCodification table: \n')
 
     for e in codification:
         print(e, " -> ", codification[e])
