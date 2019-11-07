@@ -7,12 +7,13 @@ class Node:
 class Tree:
     def __init__(self):
         self.root = None
+        self.count = 0
 
     def add(self, val):
         if(self.root == None):
             self.root = Node(val)
         else:
-            self._add(val, self.root)
+            self._add(val, self.root)#TO-DO ADD COUNTER FOR IDENTIFIER
 
     def _add(self, val, node):
         if(val < node.v):
@@ -33,5 +34,6 @@ class Tree:
     def _printTree(self, node):
         if(node != None):
             self._printTree(node.l)
-            print (str(node.v) + ' ')
+            print (str(self.count) + ' -> ' + (node.v) + ' ')
+            self.count += 1
             self._printTree(node.r)
