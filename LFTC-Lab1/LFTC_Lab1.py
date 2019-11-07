@@ -36,11 +36,11 @@ if __name__ == '__main__':
                 else:
                     raise Exception('Unknown token ' + token + ' at line ' + str(lineNo))
 
-    print('\nProgram internal form: \n', pif)
+    print('\nProgram internal form:\n', pif)
 
-    print('\nSymbol table: \n', symbolTable)
+    print('\nSymbol table:\n', symbolTable)
 
-    print('\n\nCodification table: \n')
+    print('\n\nCodification table:\n')
 
     for e in codification:
         print(e, " -> ", codification[e])

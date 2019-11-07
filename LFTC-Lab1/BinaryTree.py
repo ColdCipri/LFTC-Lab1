@@ -7,7 +7,7 @@ class Node:
 class Tree:
     def __init__(self):
         self.root = None
-        self.count = 0
+        self.count = 1
 
     def add(self, val):
         if(self.root == None):
